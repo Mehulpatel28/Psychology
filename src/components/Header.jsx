@@ -16,9 +16,9 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import PsychologyIcon from "@mui/icons-material/Psychology";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
+import logo from "../assets/logo/logo-1.png"; // ✅ LOGO IMAGE
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -41,7 +41,9 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setVisible(!(currentScrollY > lastScrollY.current && currentScrollY > 120));
+      setVisible(
+        !(currentScrollY > lastScrollY.current && currentScrollY > 120)
+      );
       lastScrollY.current = currentScrollY;
     };
 
@@ -57,11 +59,14 @@ const Header = () => {
   };
 
   const isActive = (path) =>
-    path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
+    path === "/"
+      ? location.pathname === "/"
+      : location.pathname.startsWith(path);
 
   // ================= MOBILE DRAWER =================
   const drawer = (
     <Box sx={{ width: 300 }}>
+      {/* Drawer Header */}
       <Box
         sx={{
           px: 2.5,
@@ -78,13 +83,17 @@ const Header = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: 1,
+            gap: 1.2,
             textDecoration: "none",
-            color: "inherit",
           }}
         >
-          <PsychologyIcon sx={{ color: "#3498db", fontSize: 30 }} />
-          <Typography fontWeight={800}>MindWell</Typography>
+          <Box
+            component="img"
+            src={logo}
+            alt="MindWell Logo"
+            sx={{ width: 55, height: 55 }}
+          />
+          <Typography fontWeight={800}>Mindcure Counselling</Typography>
         </Box>
 
         <IconButton onClick={handleDrawerToggle}>
@@ -94,6 +103,7 @@ const Header = () => {
 
       <Divider />
 
+      {/* Nav Items */}
       <List sx={{ py: 1 }}>
         {navItems.map((item) => {
           const active = isActive(item.path);
@@ -123,7 +133,7 @@ const Header = () => {
         })}
       </List>
 
-      {/* MOBILE JOIN US BUTTON */}
+      {/* 🔥 MOBILE JOIN US BUTTON (RESTORED) */}
       <Box sx={{ px: 3, mt: 2 }}>
         <Button
           fullWidth
@@ -162,7 +172,7 @@ const Header = () => {
           borderBottom: "1px solid rgba(0,0,0,0.06)",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Toolbar
             disableGutters
             sx={{
@@ -182,28 +192,36 @@ const Header = () => {
                 textDecoration: "none",
               }}
             >
-              <PsychologyIcon sx={{ fontSize: 45, color: "#3498db" }} />
+              <Box
+                component="img"
+                src={logo}
+                alt="MindWell Logo"
+                sx={{
+                  width: 80,
+                  height: 80,
+                  objectFit: "contain",
+                }}
+              />
               <Typography
                 sx={{
-                  fontWeight: 900,
-                  fontSize: "1.35rem",
-                  background:
-                    "linear-gradient(90deg,#3498db,#9b59b6)",
+                  fontWeight: 800,
+                  fontSize: "1.2rem",
+                  background: "#0085A4",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                MindWell Psychology
+                MINDCURE COUNSELLING
               </Typography>
             </Box>
 
-            {/* DESKTOP NAV */}
+            {/* DESKTOP NAV + JOIN */}
             {!isMobile && (
               <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
                 {navItems.map((item) => {
                   const active = isActive(item.path);
                   return (
-                    <Button
+                     <Button
                       key={item.name}
                       component={Link}
                       to={item.path}
@@ -233,7 +251,7 @@ const Header = () => {
                   );
                 })}
 
-                {/* DESKTOP JOIN US BUTTON */}
+                {/* 🔥 DESKTOP JOIN US BUTTON (RESTORED) */}
                 <Button
                   component={Link}
                   // to="/join"
@@ -244,8 +262,7 @@ const Header = () => {
                     fontWeight: 700,
                     color: "#fff",
                     borderRadius: 2,
-                    background:
-                      "linear-gradient(90deg,#3498db,#9b59b6)",
+                    background: "linear-gradient(90deg,#3498db,#9b59b6)",
                     boxShadow: "0 6px 18px rgba(52,152,219,0.35)",
                     "&:hover": {
                       transform: "translateY(-2px)",

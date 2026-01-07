@@ -21,6 +21,7 @@ import {
   LocationOn,
   Psychology,
 } from "@mui/icons-material";
+import logo from "../assets/logo/logo-1.png"; // ✅ LOGO IMAGE
 
 const Footer = () => {
   const theme = useTheme();
@@ -100,25 +101,38 @@ const Footer = () => {
             {/* 1️⃣ BRAND SECTION */}
             <Grid item xs={12} sm={6} md={3}>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}>
-                <Psychology
-                  sx={{
-                    color: "#60a5fa",
-                    fontSize: { xs: 28, md: 32 },
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 700,
-                    background: "linear-gradient(90deg, #60a5fa, #93c5fd)",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    fontSize: { xs: "1.1rem", md: "1.25rem" },
-                  }}
-                >
-                  MindWell Psychology
-                </Typography>
+             <Box
+              component={Link}
+              to="/"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1.2,
+                textDecoration: "none",
+              }}
+            >
+              <Box
+                component="img"
+                src={logo}
+                alt="MindWell Logo"
+                sx={{
+                  width: 80,
+                  height: 80,
+                  objectFit: "contain",
+                }}
+              />
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  background: "#0085A4",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                MINDCURE COUNSELLING
+              </Typography>
+            </Box>
               </Box>
 
               <Typography
@@ -348,21 +362,10 @@ const Footer = () => {
                     }}
                   />
                   <Typography fontSize={{ xs: "13px", md: "14px" }} sx={{ opacity: 0.9 }}>
-                    contact@mindwellpsychology.com
+                    contact@mindcurecounselling.com
                   </Typography>
                 </Box>
               </Box>
-
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  fontWeight: 700,
-                  mb: 1.5,
-                  fontSize: { xs: "0.95rem", md: "1rem" },
-                }}
-              >
-                Stay Updated
-              </Typography>
 
               <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 1.5 }}>
                 <TextField
@@ -431,7 +434,7 @@ const Footer = () => {
               fontSize={{ xs: "12px", md: "13px" }}
               sx={{ opacity: 0.7, lineHeight: 1.5 }}
             >
-              © {new Date().getFullYear()} MindWell Psychology. All rights reserved.
+              © {new Date().getFullYear()} Mindcure Counselling. All rights reserved.
               <br />
               <Box component="span" sx={{ fontSize: "11px", opacity: 0.6 }}>
                 Providing evidence-based mental health resources since 2015.

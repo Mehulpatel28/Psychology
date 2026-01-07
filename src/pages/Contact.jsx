@@ -86,7 +86,7 @@ const Contact = () => {
     {
       icon: <EmailIcon sx={{ fontSize: 28 }} />,
       title: "Email Us",
-      content: "info@mindwellpsychology.com",
+      content: "info@mindcurecounselling.com",
       description: "We respond within 24 hours",
       action: "Send Email",
       color: "#9b59b6",
@@ -178,7 +178,7 @@ const Contact = () => {
               mb: 2,
             }}
           >
-            Get in Touch with MindWell
+            Get in Touch with Mindcure
           </Typography>
           <Typography
             variant={isMobile ? "h6" : "h5"}
