@@ -83,7 +83,7 @@ const GetStarted = () => {
           maxWidth: "1300px",
           mx: "auto",
           display: "flex",
-          flexDirection: isMobile ? "column-reverse" : "row",
+          flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           gap: { xs: 6, md: 10 },
           position: "relative",
