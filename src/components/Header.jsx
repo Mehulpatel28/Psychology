@@ -93,7 +93,7 @@ const Header = () => {
             alt="MindWell Logo"
             sx={{ width: 55, height: 55 }}
           />
-          <Typography fontWeight={800}>Mindcure Counselling</Typography>
+          <Typography fontWeight={800} fontSize={"0.7rem"} color="#0085A4">MINDCURE COUNSELLING</Typography>
         </Box>
 
         <IconButton onClick={handleDrawerToggle}>
