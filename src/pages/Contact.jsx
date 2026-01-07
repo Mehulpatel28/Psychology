@@ -152,7 +152,7 @@ const Contact = () => {
   return (
     <Container
       maxWidth="lg"
-      sx={{ py: { xs: 4, md: 8 }, mt: { xs: 4, md: 5 } }}
+      sx={{ py: { xs: 4, md: 8 }, mt: { xs: 8, md: 5 } }}
     >
       {/* Header */}
       <motion.div

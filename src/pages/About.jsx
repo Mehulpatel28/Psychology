@@ -86,7 +86,7 @@ const About = () => {
   ]
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 }, mt: { xs: 4, md: 5 } }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 }, mt: { xs: 8, md: 5 } }}>
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

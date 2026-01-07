@@ -156,7 +156,7 @@ const Updates = () => {
   const trendingPosts = blogPosts.filter(post => post.trending)
 
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 }, mt: { xs: 4, md: 5 } }}>
+    <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 }, mt: { xs: 8, md: 5 } }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -37,8 +37,9 @@ const AnimatedStat = ({ value, suffix }) => {
     <Typography
       ref={ref}
       sx={{
-        fontSize: { xs: "26px", md: "34px" },
+        fontSize: { xs: "24px", sm: "28px", md: "34px" },
         fontWeight: 800,
+        lineHeight: 1.1,
         color: "#2563eb",
       }}
     >
@@ -50,73 +51,96 @@ const AnimatedStat = ({ value, suffix }) => {
 
 export default function StatsSection() {
   return (
-    <Container maxWidth="xl">
-      <Box
-        sx={{
-          py: { xs: 6, md: 8 },
-          backgroundColor: "#f8fafc",
-          alignItems: "center",
-          justifyContent: "center",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <Grid container spacing={4}>
-          {statsData.map((stat, index) => (
-            <Grid item xs={6} md={3} key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
+    <Box sx={{ backgroundColor: "#f8fafc" }}>
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            py: { xs: 5, sm: 6, md: 8 },
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Grid
+            container
+            spacing={{ xs: 2, sm: 3, md: 4 }}
+            justifyContent="center"
+          >
+            {statsData.map((stat, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                key={index}
+                sx={{ display: "flex" }}
               >
-                <Box
-                  sx={{
-                    position: "relative",
-                    textAlign: "center",
-                    p: 3,
-                    borderRadius: 3,
-                    backgroundColor: "#ffffff",
-                    height: "100%",
-                    overflow: "hidden",
-                    transition: "all 0.3s ease",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.06)",
-                    "&:hover": {
-                      boxShadow: "0 20px 45px rgba(37,99,235,0.2)",
-                    },
-                  }}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -6 }}
+                  style={{ width: "100%" }}
                 >
-                  {/* Top Gradient Bar */}
                   <Box
                     sx={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: "4px",
-                      background: "linear-gradient(90deg, #2563eb, #60a5fa)",
-                    }}
-                  />
-
-                  <AnimatedStat value={stat.number} suffix={stat.suffix} />
-
-                  <Typography
-                    sx={{
-                      mt: 1,
-                      fontSize: "14px",
-                      color: "#5f6c7b",
-                      fontWeight: 600,
+                      position: "relative",
+                      textAlign: "center",
+                      p: { xs: 2.5, sm: 3 },
+                      borderRadius: 3,
+                      backgroundColor: "#ffffff",
+                      width: "100%",
+                      height: "100%",
+                      minHeight: 140,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      boxShadow: "0 12px 30px rgba(0,0,0,0.06)",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        boxShadow: "0 20px 45px rgba(37,99,235,0.2)",
+                      },
                     }}
                   >
-                    {stat.label}
-                  </Typography>
-                </Box>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Container>
+                    {/* Top Gradient Bar */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: "4px",
+                        borderRadius: "12px 12px 0 0",
+                        background:
+                          "linear-gradient(90deg, #2563eb, #60a5fa)",
+                      }}
+                    />
+
+                    <AnimatedStat
+                      value={stat.number}
+                      suffix={stat.suffix}
+                    />
+
+                    <Typography
+                      sx={{
+                        mt: 1,
+                        fontSize: { xs: "13px", sm: "14px" },
+                        color: "#5f6c7b",
+                        fontWeight: 600,
+                        lineHeight: 1.4,
+                        px: 1,
+                      }}
+                    >
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Container>
+    </Box>
   );
 }
