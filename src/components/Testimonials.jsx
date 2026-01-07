@@ -21,7 +21,7 @@ const testimonials = [
     name: "Dr. Sarah Johnson",
     role: "Clinical Psychologist",
     content:
-      "MindWell has elevated the way I deliver therapy. The assessments and evidence-based tools help me track progress with clarity and confidence.",
+      "Mindcure Counselling has elevated the way I deliver therapy. The assessments and evidence-based tools help me track progress with clarity and confidence.",
     avatar: "SJ",
   },
   {
@@ -35,7 +35,7 @@ const testimonials = [
     name: "Emma Rodriguez",
     role: "School Psychologist",
     content:
-      "From student wellbeing plans to emotional tracking, MindWell has transformed how I support mental health in educational settings.",
+      "From student wellbeing plans to emotional tracking, Mindcure Counselling has transformed how I support mental health in educational settings.",
     avatar: "ER",
   },
   {
@@ -147,7 +147,7 @@ const Testimonials = () => {
               lineHeight: 1.6,
             }}
           >
-            Mental health experts across the globe rely on MindWell to deliver
+            Mental health experts across the globe rely on Mindcure Counselling to deliver
             compassionate, evidence-based psychological care.
           </Typography>
         </Box>

@@ -109,7 +109,7 @@ const About = () => {
               mb: 3
             }}
           >
-            About MindWell Psychology
+            About Mindcure Counselling
           </Typography>
           <Typography 
             variant={isMobile ? "h6" : "h5"} 
